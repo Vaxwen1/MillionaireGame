@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Summary</title>
+    <meta charset='utf-8'>
+    <style>
+        body
+        {
+            background-color: #040443;
+        }
+        .header
+        {
+            font-size: 60px;
+            color:#E0B45C;
+            text-align: center;
+        }
+        #summaryT
+        {  
+            border:solid 2px #E0B45C;
+            color:#E0B45C;
+            width: 100%;
+            text-align: center;
+        }
+        th
+        {
+            padding: 0.5em 2em 0.5em 2em; 
+        }
+        #prize
+        {
+            font-size: 50px;
+            color:#E0B45C;
+        }
+        #restart
+        {
+            display: flex;
+            justify-content: center;
+            border: solid 3px #0c0c85;
+            color:#040443;
+            border-radius: 1em;
+            background-color: #C79133;
+            margin:auto;
+            font-size: 30px;
+            padding: 0em 0.5em 0em 0.5em;
+        }
+       
+    </style>
+  </head>
+  <body>
+   <h1 class="header">Summary page</h1>
+    <table  align="center" id="summaryT">
+        <tr>
+            <th>Question</th>
+            <th>User Answer</th>
+            <th>Result</th>        
+        </tr>
+    </table>
+    <p id ="prize">Prize: $<span></span></p>
+    <button id="restart">Restart</button>
+  </body>
+  <script src="../script/summary.js"></script>
+</html>

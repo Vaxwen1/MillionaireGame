@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Who Wants to Be a Millionaire?</title>
+    <meta charset='utf-8'>
+    <style>
+      body
+      {
+        background-color: #040443;
+        display: flex;
+        flex-direction: row;
+      }
+      #lifeLine
+      {
+        margin-left:auto;
+        margin-right: auto;
+        width: 30%;
+        padding: 0em 0em 0em 7em;
+        background-color: black;
+        border: solid 3px #2786D3;
+        border-radius: 1em;
+      }
+      #lifeLine img
+      {
+        width: 25%;
+        margin: 0px;
+      }
+      #Name
+      {
+        font-size: xx-large;
+        color: aliceblue;
+      }
+      .center
+      {
+        /* display: block; */
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+      }
+      #question
+      {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width:60%;
+      }
+      #question button, #question p
+      {
+        font-size: 30px;
+        text-align: center;
+        background-color: #141f95;
+        color: aliceblue;
+      }
+      #question table
+      {
+        width:100% ;
+      }
+      button
+      {
+        width: 70%;
+      }
+      #list
+      {
+        flex: 1;
+        margin-right: 1em;
+        background-color: #00096B;
+        padding: 1.5em;
+        border: solid 5px #477FB8;
+      }
+      #list tr
+      {
+        font-size: 30px;
+        color: #E0B45C;
+      }
+      #list .point
+      {
+        color: aliceblue;
+      }
+      label
+      {
+        font-size: x-large;
+        color:white;
+      }
+      #safeTimerDisplay
+      {
+        background-color: #00096B;
+        width: 10%;
+        margin: 0.5em auto 0.5em auto;
+        text-align: center;
+        font-size: 40px;
+        border-radius: 1em;
+        color:white;
+      }
+    </style>
+  </head>
+
+  <body onload="showQuestion()">
+    <div style="flex:5;">
+      <div id ="lifeLine">
+        <!--Fandom.Who Wants To Be A Millionaire Wiki[online].Avaliable at: <https://millionaire.fandom.com/wiki/Lifeline> [Accessed 04 December 2024] -->
+        <img src="../img/50_50.jpeg" id ="fifty_fiftyB" alt ="50/50">
+        <img src="../img/friendCall.jpeg" id ="friendCallB" alt ="Friend Call">
+        <img src="../img/groupHelp.jpeg" id ="groupHelpB" alt ="Group help">
+      </div>
+      <p id = "safeTimerDisplay">00:30</p>
+      <div style="display: flex;">
+        <p style="color: aliceblue; font-size: 50px;" id ="playerName"></p>
+        <!--Nintendo.Who Wants to Be a Millionaire? for Nintendo Switch - Nintendo Official Site[online].Avaliable at: <https://www.nintendo.com/us/store/products/who-wants-to-be-a-millionaire-switch/> [Accessed 04 December 2024] -->
+        <img class="center" src="../img/logo.avif" alt="logo">
+      </div>  
+      <div id="question">
+        <p id ="txtField">Question:</p>
+        <table align="center">
+          <tr>
+            <td>
+              <label for="A">A:</label>
+              <button id="buttonA">A</button>
+            </td>
+            <td>
+              <label for="B">B:</label>
+              <button id="buttonB">B</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="C">C:</label>
+              <button id="buttonC">C</button>
+            </td>
+            <td>
+              <label for="D">D:</label>
+              <button id ="buttonD">D</button>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div id="list">
+      <table>
+        <tr class="point">
+          <td>15</td>
+          <td>&#9679;</td>
+          <td>$1 Million</td>
+        </tr>
+        <tr>
+          <td>14</td>
+          <td>&#9679;</td>
+          <td>$500,000</td>
+        </tr>
+        <tr>
+          <td>13</td>
+          <td>&#9679;</td>
+          <td>$250,000</td>
+        </tr>
+        <tr>
+          <td>12</td>
+          <td>&#9679;</td>
+          <td>$125,000</td>
+        </tr>
+        <tr>
+          <td>11</td>
+          <td>&#9679;</td>
+          <td>$64,000</td>
+        </tr>
+        <tr class="point">
+          <td>10</td>
+          <td>&#9679;</td>
+          <td>$32,000</td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>&#9679;</td>
+          <td>$16,000</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>&#9679;</td>
+          <td>$8,000</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>&#9679;</td>
+          <td>$4,000</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>&#9679;</td>
+          <td>$2,000</td>
+        </tr>
+        <tr class="point">
+          <td>5</td>
+          <td>&#9679;</td>
+          <td>$1,000</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>&#9679;</td>
+          <td>$500</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>&#9679;</td>
+          <td>$300</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>&#9679;</td>
+          <td>$200</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>&#9679;</td>
+          <td>$100</td>
+        </tr>
+                 
+      </table>
+    </div>
+    <script src="../script/game.js"></script>
+  </body>
+
+</html>
